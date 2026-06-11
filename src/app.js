@@ -5,6 +5,7 @@ import { forecast } from './utils/forecast.js'
 import { geocode } from './utils/geocode.js';
 
 const app = express();
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath=path.join(import.meta.dirname,'../public')
 const viewsPath = path.join(import.meta.dirname,'../templates/views')
@@ -79,6 +80,6 @@ app.get('/*splat',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Sever is up on port 3000')
+app.listen(port,()=>{
+    console.log('Sever is up on port '+port)
 })
